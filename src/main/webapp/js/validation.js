@@ -16,7 +16,7 @@ function valid(){
 function yValidate(){
     const FLOAT_REGEX = /^-?\d+(?:\.\d+)?$/;
     let inputY = parseFloat(yField.value);
-    if (inputY>3 || inputY<-3 || Number.isNaN(inputY) || !FLOAT_REGEX.test(inputY)){
+    if (inputY>3 || inputY<-3 || Number.isNaN(inputY) || !FLOAT_REGEX.test(yField.value)){
         yField.style.borderColor = INVALID_COLOR;
         return false;
     } else {

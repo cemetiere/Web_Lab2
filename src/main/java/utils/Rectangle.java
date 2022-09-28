@@ -13,7 +13,9 @@ public class Rectangle extends AbstractFigure{
 
     @Override
     public boolean checkHit(int x, double y, int r){
-        return x>=0 && y>=0 && y<=r/2 && x<=r;
+        boolean result = x>=0 && y>=0 && y<=((double)r)/2 && x<=r;
+        log.info("Checking rectangle: "+result);
+        return result;
     }
 
 }

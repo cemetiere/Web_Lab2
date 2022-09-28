@@ -8,9 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Work #1</title>
+    <title>Lab Work #2</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="js/validation.js"></script>
+    <script defer src="js/script.js"></script>
+
 </head>
 <body>
     <%  
@@ -20,6 +23,19 @@
     } else {data = new ClientData();}
     ArrayList<Result> results = data.getData();
     %>
+    <script>
+        const POINTS = [
+            <% for (Result result : results) { %>
+            {
+                x: <%= result.getX() %>,
+                y: <%= result.getY() %>,
+                r: <%= result.getR() %>
+            },
+            <%
+                }
+            %>
+        ]
+    </script>
     <table class="main-panel-table" cellpadding="0" cellspacing="0" height="100%" width="100%" border="0">
         <tr  style="background-image: url(img/bg2.gif);background-repeat: no-repeat; background-position: top center;background-size: 100% 100%;">
             <td>
@@ -28,7 +44,7 @@
                         <td colspan="4">
                             <header>
                                 <h2 class="headText">Кириллов Андрей</h2>
-                                <h3 class="headText">Группа P32311 | Вариант 3008</h3>
+                                <h3 class="headText">Группа P32311 | Вариант 3453</h3>
                             </header>
                         </td>
                     </tr>
@@ -45,7 +61,6 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        hui
                                         <tr>
                                             <!-- X panel -->
                                             <td width="50%">
@@ -61,7 +76,6 @@
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
                                                         <option value="4">4</option>
-                                                        <option id="xFromClick" value="" disabled></option>
                                                     </select>
                                                 </div>
                                             </td>
@@ -71,10 +85,10 @@
                                                     <h3 class="letter">R:</h3>
                                                     <select name="r" id="rValue" class="selectField">
                                                         <option value="1">1</option>
-                                                        <option value="1.5">1.5</option>
                                                         <option value="2">2</option>
-                                                        <option value="2.5">2.5</option>
                                                         <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
                                                     </select>
                                                 </div>
                                             </td>
@@ -108,6 +122,7 @@
                             <td>
                                 <div class="imgTyanPanel">
                                     <canvas id="graph" width="300" height="300"></canvas>
+                                    <script src="js/graph.js"></script>
                                     <img class="tyanImg" src="img/mainGirl.webp" onmouseover="this.src = 'img/girlOnMouseMove.webp'" onmouseout="this.src = 'img/mainGirl.webp'" alt="tyan" width="300" height="300" align="right">
                                 </div>
                             </td>
@@ -129,10 +144,10 @@
                             <th>Hit fact</th>
                         </tr>
                         </thead>
+                        <tbody>
                         <%
                             for (Result result : results) {
                         %>
-                        <tbody>
                         <tr>
                             <td><%=result.getX()%>
                             </td>
@@ -155,11 +170,5 @@
                 </td>
             </tr>
     </table>
-    <div id="pop_up_panel">
-        <img id="pop_up_message" src='img/miss.png'>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="module" src="js/script.js"></script>
-    <script type="module" src="js/graph.js"></script>
 </body>
 </html>

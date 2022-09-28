@@ -30,7 +30,7 @@ public class AreaCheckServlet extends HttpServlet{
         Date date = new Date(System.currentTimeMillis());
         String currentTime = formatter.format(date);
         Checker checker = new Checker();
-        int x = Integer.parseInt(request.getParameter("x"));
+        int x = (int)Math.round(Double.parseDouble(request.getParameter("x")));
         double y = Double.parseDouble(request.getParameter("y"));
         int r = Integer.parseInt(request.getParameter("r"));
         boolean hitFact = checker.checkHit(x, y, r);

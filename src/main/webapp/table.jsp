@@ -28,10 +28,11 @@
         <th>Hit fact</th>
     </tr>
     </thead>
+    <tbody>
     <%
         for (Result result : results) {
     %>
-    <tbody>
+
     <tr>
         <td><%=result.getX()%>
         </td>

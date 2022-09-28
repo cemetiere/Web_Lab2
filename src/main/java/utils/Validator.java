@@ -14,7 +14,7 @@ public class Validator {
         double parsedY;
         int parsedR;
         try{
-            parsedX = Integer.parseInt(x);
+            parsedX = (int)Math.round(Double.parseDouble(x));
             parsedY = Double.parseDouble(y);
             parsedR = Integer.parseInt(r);
         }catch(Exception ex){

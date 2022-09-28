@@ -12,7 +12,9 @@ public class Triangle extends AbstractFigure{
 
     @Override
     public boolean checkHit(int x, double y, int r){
-        return x<=0 && y>=0 && y<=(x+r);
+        boolean result = x<=0 && y>=0 && y<=(x+r);
+        log.info("Checking triangle: "+result);
+        return result;
     }
 
 }
