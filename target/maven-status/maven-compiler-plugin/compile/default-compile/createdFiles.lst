@@ -1,0 +1,12 @@
+utils\Validator.class
+utils\Triangle.class
+utils\Checker.class
+utils\Circle.class
+beans\ClientData.class
+servlets\ControllerServlet.class
+filters\ValidationFilter.class
+utils\AbstractFigure.class
+servlets\ErrorPageServlet.class
+utils\Result.class
+utils\Rectangle.class
+servlets\AreaCheckServlet.class
