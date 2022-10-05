@@ -11,13 +11,14 @@
             background-color: black;
         }
         img {
-            margin: 7% 0 0 34%;
+            margin: 15% 0 0 30%;
         }
     </style>
 </head>
 <body>
 <div>
-    <img src="img/door.jpg" alt="Wrong door">
+    <img src="img/wrongHole.png" alt="Wrong hole">
+    <a href="index.jsp">вернуться назад</a>
 </div>
 </body>
 </html>

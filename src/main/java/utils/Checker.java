@@ -3,10 +3,10 @@ package utils;
 import java.util.logging.Logger;
 
 public class Checker {
-    private Triangle triangle;
-    private Rectangle rectangle;
-    private Circle circle;
-    Logger log = Logger.getLogger(this.getClass().toString());
+    private static final Logger log = Logger.getLogger(Checker.class.toString());
+    private final Triangle triangle;
+    private final Rectangle rectangle;
+    private final Circle circle;
     public Checker(){
         this.triangle = new Triangle();
         this.rectangle = new Rectangle();

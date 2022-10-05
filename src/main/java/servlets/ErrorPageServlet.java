@@ -9,6 +9,9 @@ import java.io.IOException;
 public class ErrorPageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
+        resp.sendError(450, "Incorrect Data");
+    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     }
 }

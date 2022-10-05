@@ -4,8 +4,7 @@ package utils;
 import java.util.logging.Logger;
 
 public class Rectangle extends AbstractFigure{
-    Logger log = Logger.getLogger(this.getClass().toString());
-
+    private static final Logger log = Logger.getLogger(Rectangle.class.toString());
 
     public Rectangle(){
         log.info("Rectangle was successfuly created");

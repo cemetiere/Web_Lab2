@@ -3,7 +3,7 @@ package utils;
 import java.util.logging.Logger;
 
 public class Triangle extends AbstractFigure{
-    Logger log = Logger.getLogger(this.getClass().toString());
+    private static final Logger log = Logger.getLogger(Triangle.class.toString());
 
 
     public Triangle(){
