@@ -2,13 +2,10 @@ package utils;
 
 import java.util.logging.Logger;
 
-public class Triangle extends AbstractFigure{
+import interfaces.AbstractFigure;
+
+public class Triangle implements AbstractFigure{
     private static final Logger log = Logger.getLogger(Triangle.class.toString());
-
-
-    public Triangle(){
-        log.info("Tringle was successfuly created");
-    }
 
     @Override
     public boolean checkHit(int x, double y, int r){

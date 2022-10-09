@@ -1,14 +1,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="utils.Result" %>
 <%@ page import="beans.ClientData" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<% ClientData data;
+<% ArrayList<Result> data;
     if(getServletContext().getAttribute("data")!=null){
-        data = (ClientData)getServletContext().getAttribute("data");
-    } else {data = new ClientData();}
+        data = (ArrayList<Result>)getServletContext().getAttribute("data");
+    } else {data = new ArrayList<>();}
 %>
-<% ArrayList<Result> results = data.getData();%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +19,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="js/validation.js"></script>
     <script defer src="js/script.js"></script>
-
 </head>
 <body>
     <script>
         const POINTS = [
-            <% for (Result result : results) { %>
+            <% if(data!=null){
+                for (Result result : data) { 
+            %>
             {
                 x: <%= result.getX() %>,
                 y: <%= result.getY() %>,
@@ -33,6 +33,7 @@
             },
             <%
                 }
+            }
             %>
         ]
     </script>
@@ -145,16 +146,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <c:forEach items="${data.getData()}" var="result">
-                                <tr>
-                                    <td>${result.getX()}</td>
-                                    <td>${result.getY()}</td>
-                                    <td>${result.getR()}</td>
-                                    <td>${result.getCurrentTime()}</td>
-                                    <td>${result.getExecutionTime()}</td>
-                                    <td>${result.getHitFact()}</td>
-                                </tr>
-                            </c:forEach>
+                            <c:if test="${data!=null}">
+                                <c:forEach items="${data}" var="result">
+                                    <tr>
+                                        <td>${result.getX()}</td>
+                                        <td>${result.getY()}</td>
+                                        <td>${result.getR()}</td>
+                                        <td>${result.getCurrentTime()}</td>
+                                        <td>${result.getExecutionTime()}</td>
+                                        <td>${result.getHitFact()}</td>
+                                    </tr>
+                                </c:forEach>
+                            </c:if>
                         </tbody>
                     </table>
                 </td>

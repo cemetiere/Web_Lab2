@@ -3,13 +3,10 @@ package utils;
 
 import java.util.logging.Logger;
 
-public class Circle extends AbstractFigure{
+import interfaces.AbstractFigure;
+
+public class Circle implements AbstractFigure{
     private static final Logger log = Logger.getLogger(Circle.class.toString());
-
-
-    public Circle(){
-        log.info("Circle was successfuly created");
-    }
 
     @Override
     public boolean checkHit(int x, double y, int r){

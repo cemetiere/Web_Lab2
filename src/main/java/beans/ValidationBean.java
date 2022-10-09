@@ -1,13 +1,16 @@
-package utils;
+package beans;
 
 import java.util.Arrays;
 
-public class Validator {
+import interfaces.ValidatorInterface;
+import jakarta.ejb.LocalBean;
+import jakarta.ejb.Stateless;
+
+@Stateless
+@LocalBean
+public class ValidationBean implements ValidatorInterface { 
     private int[] rArea = {1,2,3,4,5};
     private int[] xArea = {-4, -3, -2, -1, 0, 1, 2, 3, 4};
-
-    public Validator(){
-    }
 
     public boolean validate(String x, String y,String r){
         int parsedX;

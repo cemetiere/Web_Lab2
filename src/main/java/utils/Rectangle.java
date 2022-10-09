@@ -3,12 +3,10 @@ package utils;
 
 import java.util.logging.Logger;
 
-public class Rectangle extends AbstractFigure{
-    private static final Logger log = Logger.getLogger(Rectangle.class.toString());
+import interfaces.AbstractFigure;
 
-    public Rectangle(){
-        log.info("Rectangle was successfuly created");
-    }
+public class Rectangle implements AbstractFigure{
+    private static final Logger log = Logger.getLogger(Rectangle.class.toString());
 
     @Override
     public boolean checkHit(int x, double y, int r){
