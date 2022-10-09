@@ -24,10 +24,6 @@ public class Checker{
     );
     public boolean checkHit(int x, double y, int r){
         log.info("Checking x= " + x + " y=" + y + " " + " r="+r);
-        boolean result = false;
-        for (AbstractFigure figure : figureList) {
-            result = result || figure.checkHit(x, y, r);
-        }
-        return result;
+        return figureList.stream().anyMatch(figure -> figure.checkHit(x, y, r)==true);
     }
 }
